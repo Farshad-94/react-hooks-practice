@@ -7,6 +7,7 @@ const ResourceList = ({ resource }) => {
   const fetchResource = (resource) => {
     getResource(resource)
     .then(response => {
+      console.log(response);
       setResources(response);
     })
   };
@@ -16,7 +17,15 @@ const ResourceList = ({ resource }) => {
   }, [resource]);
 
     return (
-      <div>{resources.length}</div>
+      <div>
+        {resources.map(record =>{
+          return (
+            <div key={record.id}>
+              <li>{record.title}</li>
+            </div>
+          )
+        })}
+      </div>
     );
 }
 
