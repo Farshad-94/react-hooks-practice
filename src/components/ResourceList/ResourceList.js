@@ -5,14 +5,12 @@ const ResourceList = ({ resource }) => {
   const [resources, setResources] = useState([]);
 
   const fetchResource = (resource) => {
-    console.log(resource);
-    
     getResource(resource)
     .then(response => {
       console.log(response);
       setResources(response);
     })
-    };
+  };
 
   useEffect(() => {
     fetchResource(resource);
