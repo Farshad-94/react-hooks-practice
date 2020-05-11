@@ -7,7 +7,6 @@ const ResourceList = ({ resource }) => {
   const fetchResource = (resource) => {
     getResource(resource)
     .then(response => {
-      console.log(response);
       setResources(response);
     })
   };
