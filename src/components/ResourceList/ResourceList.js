@@ -1,23 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { getResource } from '../../services/appApis';
+import React from 'react';
+import useResources from '../UseResources';
 
-//Extract hooks related logic into a separate function
-const useResources = (resource) => {
-  const [resources, setResources] = useState([]);
-
-  const fetchResource = (resource) => {
-    getResource(resource)
-    .then(response => {
-      setResources(response);
-    })
-  };
-
-  useEffect(() => {
-    fetchResource(resource);
-  }, [resource]);
-
-  return resources;
-}
 
 const ResourceList = ({ resource }) => {
   //call the useResources function to render logic into ResourceList comp. 
